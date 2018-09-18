@@ -11,10 +11,13 @@ Upon user request this program can display the location of a voice requested roo
 ## Event Listing
 This program currently is set up to pull data from the IEEE calender, however needs to be adjusted to then take the data and display it on to a layout.
 
+# Doing:
+- A housing must be made to hold the screen and imx7.d that can be mounted on a wall and plugged into a power socket.
+- Combine Navigation and Idle State programs
+
 # What needs to be done?
 - Finished navigation paths must be added to the navigation system switch statements.
 - Event Listing needs to be fixed
-- A housing must be made to hold the screen and imx7.d that can be mounted on a wall and plugged into a power socket.
 - Navigation system method switched over to a pathing algorithm to make the system more adaptable to new buildings.
 - Expand the system to include campus wide maps
 
