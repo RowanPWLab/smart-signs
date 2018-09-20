@@ -118,7 +118,8 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                 Log.e(TAG, "failed to found I2S audio output device, using default");
             }
         }
-
+//temporary comment to get it to run. 9/20/18 DS
+        /*
         try {
             if (USE_VOICEHAT_I2S_DAC) {
                 Log.i(TAG, "initializing DAC trigger");
@@ -143,7 +144,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
             Log.e(TAG, "error configuring peripherals:", e);
             return;
         }
-
+*/
         // Set volume from preferences
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         int initVolume = preferences.getInt(PREF_CURRENT_VOLUME, DEFAULT_VOLUME);
