@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NavigationPath">
+        <attr name="PathColor" format="color" />
+        <attr name="EndColor" format="color" />
+        <attr name="RoomNumber" format="integer" />
+    </declare-styleable>
+</resources>
+
