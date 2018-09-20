@@ -24,4 +24,388 @@
     <string name="assistant">Assistant</string>
     <string name="mapplayer">mapplayer</string>
     <string name="back">Return</string>
+
+  <!--***********-->
+
+  <string name="action_example" translatable="false">Example action</string>
+  <string name="sm_oncreates" translatable="false">CREATED</string>
+
+  <!-- dataSet -->
+  <string name="SUMMARY" translatable="false">SUMMARY</string>
+  <string name="ALERT" translatable="false">ALERT</string>
+  <string name="TEMPERATURE_ADJ" translatable="false">TEMPERATURE_ADJ</string>
+  <string name="TEMPERATURE_TRUE" translatable="false">TEMPERATURE_TRUE</string>
+  <string name="PRECIPITATION" translatable="false">PRECIPITATION</string>
+  <string name="PRECIPITATION_INTENSITY" translatable="false">PRECIPITATIONI</string>
+  <string name="WIND" translatable="false">WIND</string>
+  <string name="DEW_POINT" translatable="false">DEW_POINT</string>
+  <string name="BAROMETER" translatable="false">BAROMETER</string>
+  <string name="CLOUD_COVER" translatable="false">CLOUD_COVER</string>
+  <string name="VISIBILITY" translatable="false">VISIBILITY</string>
+  <string name="OZONE" translatable="false">OZONE</string>
+  <string name="HUMIDITY" translatable="false">HUMIDITY</string>
+  <string name="DIGEST" translatable="false">DIGEST</string>
+  <string name="PROPERTIES" translatable="false">PROPERTIES</string>
+
+  <!-- Settings -->
+  <string name="METRIC" translatable="false">METRIC</string>
+  <string name="NOTIFICATIONS" translatable="false">NOTIFICATIONS</string>
+  <string name="BGNOTIFICATIONS" translatable="false">BGNOTIFICATIONS</string>
+  <string name="BOOT" translatable="false">BOOT</string>
+  <string name="SETTINGS_THRESHOLDS">Personal Comfort</string>
+  <string name="TEMP_HIGH_THRESHOLD" translatable="false">TEMP_HIGH_THRESHOLD</string>
+  <string name="TEMP_HIGH_THRESHOLD_V" translatable="false">88</string>
+  <string name="TEMP_LOW_THRESHOLD" translatable="false">TEMP_LOW_THRESHOLD</string>
+  <string name="TEMP_LOW_THRESHOLD_V" translatable="false">45</string>
+  <string name="OZONE_THRESHOLD" translatable="false">OZONE</string>
+  <string name="HUMIDITY_HIGH" translatable="false">HUMIDH</string>
+  <string name="HUMIDITY_LOW" translatable="false">HUMIDL</string>
+  <string name="SM_METRIC">Metric</string>
+  <string name="SM_NOTIFICATIONS">Weather Updates</string>
+  <string name="SM_BGNOTIFICATIONS" translatable="false">Background Notifications</string>
+  <string name="SM_BOOT">Start Service on Boot</string>
+  <string name="SM_TEMP_HIGH_THRESHOLD">Temperature Considered Hot</string>
+  <string name="SM_TEMP_LOW_THRESHOLD">Temperature Considered Cold</string>
+  <string name="SM_OZONE_THRESHOLD">Uncomfortable Level of Ozone</string>
+  <string name="SM_HUMIDITY_LOW">Percentage Too Dry</string>
+  <string name="SM_HUMIDITY_HIGH">Percentage Too Humid</string>
+  <string name="LAST_CHECKED_TIME" translatable="false">LAST_CHECKED_TIME</string>
+  <string name="LAST_CACHED_WEATHER" translatable="false">LAST_CACHED_WEATHER</string>
+  <string name="LAST_CHECKED_WEATHER" translatable="false">LAST_CHECKED_WEATHER</string>
+  <string name="LAST_CACHED_TIME" translatable="false">LAST_CACHED_TIME</string>
+  <string name="LAST_CACHED_LAT" translatable="false">LAST_CACHED_LAT</string>
+  <string name="LAST_CACHED_LONG" translatable="false">LAST_CACHED_LONG</string>
+  <string name="IS_PREMIUM" translatable="false">IS_PREMIUM</string>
+  <string name="ALERT_PREMIUM" translatable="false">ALERT_PREMIUM</string>
+  <string name="IAP_PREMIUM" translatable="false">premium_upgrade</string>
+  <string name="SM_DEBUG" translatable="false">DEBUG_MODE</string>
+  <string name="SM_DEVELOPER" translatable="false">DEVELOPER</string>
+
+  <string name="appwidget_text" translatable="false">EXAMPLE</string>
+  <string name="add_widget" translatable="false">Add widget</string>
+
+  <string name="service_not_available" translatable="false">Location Lookup Service not Available</string>
+  <string name="invalid_lat_long_used" translatable="false">Invalid coordinates sent</string>
+  <string name="no_address_found" translatable="false">No Address Found for this Location</string>
+  <string name="address_found" translatable="false">Address Found</string>
+
+  <!-- Translatable Strings -->
+  <string name="premium_summary_right_now">Right Now</string>
+  <string name="premium_summary_very_hot">Get some water; it\'s really hot.</string>
+  <string name="premium_summary_warm">It\'s getting warmer.</string>
+  <string name="premium_summary_cold">Bring a coat. It\'s cold.</string>
+  <string name="premium_summary_chilly">It\'s getting chillier.</string>
+  <string name="premium_summary_moon">There is a %1$s moon</string>
+  <string name="premium_summary_rain_soon">It is going to %1$s in 1 hour</string>
+  <string name="premium_summary_rain_not_soon">It is going to %1$s in %2$d hours</string>
+  <string name="premium_summary_sunrise_soon">The sunrise is in a few hours</string>
+  <string name="premium_summary_sunset_soon">The sunset is in a few hours</string>
+  <string name="premium_summary_precipitation_now" translatable="false">@string/rain_report_now</string>
+  <string name="premium_dialog_title">Upgrade to Premium</string>
+  <string name="premium_dialog_body">If you want to help support development of this app and keep it free, you should consider purchasing the premium IAP. This enables new features in the Android Wear app, plus a glanceable summary card, more daydream themes, additional customization, and other features in the mobile app before free users.</string>
+  <string name="premium_dialog_upgrade">Upgrade</string>
+  <string name="premium_dialog_later">Remind Me Later</string>
+  <string name="premium_dialog_no" translatable="false">@string/rain_none</string>
+
+  <string name="title_summary">Summary</string>
+  <string name="summary_as_of">As of %1$s</string>
+  <string name="premium_summary_as_of" translatable="false">@string/summary_as_of</string>
+
+  <string name="description_barometric_pressure">The atmospheric pressure, measured with a barometer, can forecast short term weather conditions. Rapid drops in pressure indicate a greater chance of rain. Rapid gains indicate improving conditions.</string>
+  <string name="description_dew_point">The dew point is the temperature at which water vapor in standard conditions forms an equilibrium between condensing and evaporating. Coupled with humidity, you can determine how saturated the air is with water.</string>
+  <string name="description_ozone">Ozone at ground level can be toxic in large quantities. Various organizations have developed standards for what is considered safe and unhealthy to breath at various levels. Ozone will often be higher in denser populations where fossil fuel burning is more prevalent.</string>
+  <string name="description_humidity">The current relative humidity can be used to determine the probability of rain, dew, or fog. It measures the amount of water vapor that is present in the air. When the humidity is higher, it appears warmer because sweat will not evaporate from the skin as quickly.</string>
+  <string name="description_what_is">What is %1$s?</string>
+  <string name="based_on_coordinates">(Based on coordinates %1$f, %2$f)</string>
+
+  <string name="temperature_title">Feels Like</string>
+  <string name="adjusted_temperature">Temperature Adjusted for Humidity and Wind</string>
+  <string name="temperature_will_get">will get</string>
+  <string name="temperature_is" translatable="false">@string/wind_is</string>
+  <string name="temperature_will_be" translatable="false">@string/wind_will_be</string>
+  <string name="temperature_will_drop">will drop</string>
+  <string name="temperature_is_dropping">is dropping</string>
+  <string name="temperature_gets_cold">It %1$s very cold, with a minimum of %2$d today.</string>
+  <string name="temperature_colder">The temperature %1$s to a minimum of %2$d today.</string>
+  <string name="temperature_hotter">The temperature %1$s to a high of %2$d today.</string>
+  <string name="temperature_moderate">The temperature %1$s moderate and won\'t change today.</string>
+  <string name="temperature_gets_hot">It %1$s very hot, with a high of %2$d today.</string>
+
+  <string name="rain_rain">Rain</string>
+  <string name="rain_snow">Snow</string>
+  <string name="rain_none">No</string>
+  <string name="rain_drizzle">Drizzle</string>
+  <string name="rain_very_light">Very Light</string>
+  <string name="rain_light">Light</string>
+  <string name="rain_moderate">Moderate</string>
+  <string name="rain_heavy">Heavy</string>
+  <string name="rain_very_heavy">Very Heavy</string>
+  <string name="rain_title">Precipitation</string>
+  <string name="rain_subtitle">%1$s %2$s</string>
+  <string name="rain_no_rain">No Rain</string>
+  <string name="rain_no_data">No precipitation data is available.</string>
+  <string name="rain_none_expected">No %1$s is expected today.</string>
+  <string name="rain_report_highest_chance">The highest chance of %1$s is %2$d.</string>
+  <string name="rain_report_rise">The chance of %1$s will increase to %2$d.</string>
+  <string name="rain_report_likely">It will probably %1$s today.</string>
+  <string name="rain_report_now">There is %1$s right now.</string>
+  <string name="rain_report_now_then_stop">There is %1$s right now, but should stop later.</string>
+
+  <string name="rain_intensity_title">Precipitation Intensity</string>
+  <string name="rain_intensity_subtitle" translatable="false">%1$s</string> <!-- Units -->
+  <string name="rain_intensity_units_metric">(cm/hr)</string>
+  <string name="rain_intensity_units">(in/hr)</string>
+  <!--<string name="rain_intensity_subtitle">Heaviest %1$s in %2$s hours</string>-->
+  <string name="rain_intensity_report_no_rain">There is no precipitation data available</string>
+  <string name="rain_intensity_report_rise">The %1$s storm will continue to get stronger</string>
+  <string name="rain_intensity_report_drop">The %1$s storm will begin to grow weaker</string>
+
+  <string name="wind_title">Wind</string>
+  <string name="wind_not_windy">It will not be very windy today.</string>
+  <string name="wind_not_windy_later">Today will not be very windy.</string>
+  <string name="wind_strength_light">light wind</string>
+  <string name="wind_strength_moderate">moderate wind</string>
+  <string name="wind_strength_medium">medium wind</string>
+  <string name="wind_strength_heavy">heavy wind</string>
+  <string name="wind_strength_very_heavy">extreme wind</string>
+  <string name="wind_will_be" translatable="false">@string/humidity_will_be</string>
+  <string name="wind_is" translatable="false">@string/humidity_is</string>
+  <string name="wind_more">There %1$s %2$s going to the %3$s later today.</string>
+  <string name="wind_report_less">The %1$s from the %2$s will subside later.</string>
+  <string name="wind_report_specific">There %1$s a %2$s from the %3$s.</string>
+
+  <string name="barometer_title">Barometric Pressure</string>
+  <string name="barometer_units_american">in/Hg</string>
+  <string name="barometer_units_everyone_else">cm/Hg</string>
+  <string name="barometer_report_no_change">The barometric pressure will not change today.</string>
+  <string name="barometer_report_rise">The pressure will rise to a high of %1$s %2$s today.</string>
+  <string name="barometer_report_drop">The pressure will drop to a low of %1$s %2$s today.</string>
+  <string name="barometer_report_slight_rise">There will be a slight rise in barometric pressure today.</string>
+  <string name="barometer_report_slight_drop">There will be a slight drop in barometric pressure today.</string>
+
+  <string name="cloud_clear_sky">Clear Sky</string>
+  <string name="cloud_scattered_clouds">Scattered Clouds</string>
+  <string name="cloud_broken_cloud_cover">Broken Cloud Cover</string>
+  <string name="cloud_completely_overcast">Fully Overcast</string>
+  <string name="cloud_cover">Cloud Cover</string>
+  <string name="cloud_will_gather">More clouds are gathering.</string>
+  <string name="cloud_no_change">Cloud covering will not change today.</string>
+  <string name="cloud_will_dissipate">The clouds will dissipate.</string>
+  <string name="cloud_overcast">Overcast</string>
+
+  <string name="units_american_distance">Miles</string>
+  <string name="units_everyone_else_distance">Kilometers</string>
+  <string name="units_american_velocity">mph</string>
+  <string name="units_everyone_else_velocity">kph</string>
+
+  <string name="visibility_title">Visibility</string>
+  <string name="visibility_very_low">The visibility will get very low.</string>
+  <string name="visibility_falling">Visibility is falling.</string>
+  <string name="visibility_no_problem">Visibility will not be an issue today.</string>
+  <string name="visibility_rising">Visibility will be rising throughout the day.</string>
+  <string name="visibility_report_specific">Visibility will be at a minimum of %1$s %2$s today.</string>
+
+  <string name="dew_title">Dew Point</string>
+  <string name="dew_units">(degrees)</string>
+  <string name="dew_report_rise">The dew point will rise to %1$d degrees.</string>
+  <string name="dew_report_no_change">The dew point will not change much today.</string>
+  <string name="dew_report_drop">The dew point will drop to %1$d degrees.</string>
+
+  <string name="ozone_units">(Dobson units)</string>
+  <string name="ozone_report_omg">There\'s a very large amount of ozone in the air today.</string>
+  <string name="ozone_report_wow">There\'s a significant amount of ozone in the air today.</string>
+  <string name="ozone_report_rise">The ozone level is rising to %1$d units today.</string>
+  <string name="ozone_report_drop">The ozone level is dropping to %1$d units today.</string>
+  <string name="ozone_report_no_change">The ozone level will not change much today.</string>
+  <string name="ozone_title">Atmospheric Ozone</string>
+
+  <string name="humidity_title">Relative Humidity</string>
+  <string name="humidity_units">(percent)</string>
+  <string name="humidity_will_be">will be</string>
+  <string name="humidity_is">is</string>
+  <string name="humidity_report_very_high">It %1$s uncomfortably humid today.</string>
+  <string name="humidity_report_very_dry">It %1$s uncomfortably dry today.</string>
+  <string name="humidity_report_rise">Humidity today will rise to %1$d.</string>
+  <string name="humidity_report_drop">Humidity today will drop to %1$d.</string>
+  <string name="humidity_report_no_change">The humidity will not change much today.</string>
+
+  <string name="graph_sunset">Today\'s sunset is at %1$s.</string>
+  <string name="graph_title">Digest</string>
+  <string name="graph_subtitle">Daily Information</string>
+  <string name="graph_moon">Tonight there is a %1$s moon.</string>
+  <string name="graph_sunrise">Today\'s sunrise is at %1$s.</string>
+  <string name="graph_location">Weather based on %1$s</string>
+
+  <string name="cardinal_n">N</string>
+  <string name="cardinal_nne">NNE</string>
+  <string name="cardinal_ne">NE</string>
+  <string name="cardinal_ene">ENE</string>
+  <string name="cardinal_e">E</string>
+  <string name="cardinal_ese">ESE</string>
+  <string name="cardinal_sse">SSE</string>
+  <string name="cardinal_se">SE</string>
+  <string name="cardinal_s">S</string>
+  <string name="cardinal_ssw">SSW</string>
+  <string name="cardinal_sw">SW</string>
+  <string name="cardinal_wsw">WSW</string>
+  <string name="cardinal_w">W</string>
+  <string name="cardinal_wnw">WNW</string>
+  <string name="cardinal_nw">NW</string>
+  <string name="cardinal_nnw">NNW</string>
+  <string name="cardinalf_n">North</string>
+  <string name="cardinalf_ne">Northeast</string>
+  <string name="cardinalf_nw">Northwest</string>
+  <string name="cardinalf_e">East</string>
+  <string name="cardinalf_se">Southeast</string>
+  <string name="cardinalf_s">South</string>
+  <string name="cardinalf_sw">Southwest</string>
+  <string name="cardinalf_w">West</string>
+
+  <string name="action_refresh">Refresh</string>
+  <string name="action_about">About</string>
+  <string name="action_settings">Settings</string>
+  <string name="action_premium">Purchase Premium</string>
+  <string name="action_overflow">Overflow</string>
+
+  <string name="pref_advanced">Advanced</string>
+  <string name="pref_go">Go to Settings</string>
+  <string name="pref_debug_menu">Debug Menu</string>
+  <string name="pref_sync_interval">Sync Interval</string>
+  <string name="pref_1_hour">Every hour</string>
+  <string name="pref_2_hour">Every 2 hours</string>
+  <string name="pref_3_hour">Every 3 hours</string>
+  <string name="pref_no_anim">Animations</string>
+  <string name="pref_wifi_only">Sync on Wi-Fi Only</string>
+  <string name="sm_no_anim" translatable="false">ANIMATIONS</string>
+  <string name="sm_sync_interval" translatable="false">2</string>
+  <string name="sm_sync_wifi" translatable="false">WIFI_ONLY</string>
+  <string-array name="pref_sync_intervals">
+    <item>@string/pref_1_hour</item>
+    <item>@string/pref_2_hour</item>
+    <item>@string/pref_3_hour</item>
+  </string-array>
+  <string name="sm_build" translatable="false">BUILD</string>
+  <string name="sm_daydream_theme" translatable="false">DAYDREAM_THEME</string>
+  <string name="pref_daydream">Daydreams</string>
+  <string name="pref_ddtheme">Daydream Theme</string>
+  <string name="pref_ddtheme_blue">Blue Jay</string>
+  <string name="pref_ddtheme_dark">Summer Nights</string>
+  <string name="pref_ddtheme_red">Hawaiian Volcanoes (Premium)</string>
+  <string name="pref_ddtheme_green">Prairies (Premium)</string>
+  <string name="pref_ddtheme_dblue">Jamaican Beach (Premium)</string>
+  <string-array name="pref_ddthemes">
+    <item>@string/pref_ddtheme_blue</item>
+    <item>@string/pref_ddtheme_dark</item>
+    <item>@string/pref_ddtheme_red</item>
+    <item>@string/pref_ddtheme_green</item>
+    <item>@string/pref_ddtheme_dblue</item>
+  </string-array>
+  <string name="sm_daydream_replace_rightnow" translatable="false">REPLACE_RIGHTNOW</string>
+  <string name="pref_daydream_replace_rightnow">Replace "RIGHT NOW" with Time</string>
+  <string name="pref_more">More</string>
+  <string name="pref_join_beta">Join the Beta Community</string>
+  <string name="pref_join_beta_key" translatable="false">ads_beta</string>
+  <string name="pref_join_beta_summary">Sign up to test new features</string>
+  <string name="pref_issue_tracker">Report Bugs or Suggest Features</string>
+  <string name="pref_issue_tracker_key" translatable="false">ads_issue</string>
+  <string name="pref_issue_tracker_summary">Visit the issue tracker</string>
+  <string name="pref_powered_by">Weather Powered by Forecast.io</string>
+  <string name="pref_powered_by_key" translatable="false">ads_forecast</string>
+  <string name="pref_felker_tech">Developed by Felker Tech - Â©2015-2016</string>
+  <string name="pref_daydream_stock_settings">Go to Android Daydream Settings</string>
+  <string name="sm_enabled_notifications" translatable="false">ENABLED_NOTIFICATIONS</string>
+  <string name="pref_notifications">Enabled Notifications</string>
+  <string name="pref_notification_temp">Temperature</string>
+  <string name="pref_notification_rain">Precipitation</string>
+  <string name="pref_notification_ozone">Ozone</string>
+  <string name="pref_notification_visibility">Visibility</string>
+  <string-array name="pref_notifications_list">
+    <item>@string/pref_notification_temp</item>
+    <item>@string/pref_notification_rain</item>
+    <item>@string/pref_notification_ozone</item>
+    <item>@string/pref_notification_visibility</item>
+  </string-array>
+  <string name="pref_marshmallow">Permissions</string>
+  <string name="pref_marshmallow_location">Access Location</string>
+  <string name="pref_vpn">Manual Location Mode</string>
+  <string name="pref_vpn_key" translatable="false">VPNMode</string>
+  <string name="pref_vpn_summary">Your location must be manually set when using a VPN</string>
+  <string name="pref_help" translatable="false">help</string>
+  <string name="pref_help_title">Help</string>
+  <string name="pref_help_summary">View the warm welcome</string>
+  <string name="pref_force_notification">PREF_FORCE_NOTIFICATION</string>
+  <string name="pref_force_notification_title">Send a notification</string>
+
+  <string name="alert_title">Weather Alert</string>
+  <string name="alert_expires">Alert expires %1$s</string>
+
+  <string name="lang_code">en</string>
+
+  <string name="notification_weather_forecast">Weather Forecast</string>
+  <string name="notification_weather_update">Weather Update</string>
+  <string name="notification_expand_for_details">Expand for Details</string>
+  <string name="notification_action_get_weather">Get Weather</string>
+  <string name="notification_short_rain">it may soon %1$s</string>
+  <string name="notification_big_rain">there will probably be %1$s %2$s in %3$d hour</string>
+  <string name="notification_rain_background">%1$s in %2$d hours</string>
+  <string name="notification_short_wind">there\'ll be a %1$s %2$d%3$s wind</string>
+  <string name="notification_big_wind">it will get windier, with a max of %1$d%2$s %3$s</string>
+  <string name="notification_short_visibility">visibility is dropping</string>
+  <string name="notification_big_visibility">visibility is droppping to a minimum of %1$d %2$s</string>
+  <string name="notification_short_cloud">more clouds are gathering</string>
+  <string name="notification_big_cloud">there will be %1$s later</string>
+  <string name="notification_short_cold">it\'ll feel like %1$d</string>
+  <string name="notification_big_cold">it will feel colder later, with a low of %1$d</string>
+  <string name="notification_cold_background">Cold, low of %1$d</string>
+  <string name="notification_big_hot">it will feel hotter later, with a high of %1$d</string>
+  <string name="notification_hot_background">Hot, high of %1$d</string>
+  <string name="notification_and">and</string>
+  <string name="notification_sample_content">Velociraptors attack tomorrow evening.</string>
+  <string name="notification_sample_expand">Hide yo kids, hide yo wife. Travel to the nearest government velociraptor shelter. Do not pass go. Do not collect $200.</string>
+  <string name="tv_notification">Currently</string>
+
+  <string name="moon_new">New</string>
+  <string name="moon_waxing_crescent">Waxing Crescent</string>
+  <string name="moon_waning_crescent">Waning Crescent</string>
+  <string name="moon_waxing_gibbous">Waxing Gibbous</string>
+  <string name="moon_waning_gibbous">Waning Gibbous</string>
+  <string name="moon_full">Full</string>
+  <string name="moon_quarter">First Quarter</string>
+  <string name="moon_lastq">Third Quarter</string>
+
+  <string name="intro_title1">View Local Weather</string>
+  <string name="intro_description1">Weather Delta uses your location to get weather right where you\'re standing.</string>
+  <string name="intro_title2">Watch Weather Change</string>
+  <string name="intro_description2">Unlike other apps, you only see the weather today. You get an in-depth look at how it will change.</string>
+  <string name="intro_title3">Weather on your Wrist</string>
+  <string name="intro_description3">You will be able to see weather on Android Wear devices as well, including notifications when the weather suddenly changes.</string>
+  <string name="intro_title4">Premium Weather</string>
+  <string name="intro_description4">To get access to advanced settings, a robust Android Wear app, and a glanceable summary card, go to the premium option in the overflow menu.</string>
+
+  <string name="dialogs_1_6_r2">"This version adjusts the location of certain items.\n\nVersion information and a link to join the community are now in the settings.\n\n Also, there is now a public issue tracker. Suggestions and bugs can be published there. The link to that is also in settings."</string>
+
+  <string name="generic_ok">OK</string>
+  <string name="right_now_in" translatable="false">%1$s</string>
+
+  <string name="daydream_title">Weather Screensaver</string>
+
+  <string name="tardis_title">Time Machine</string>
+  <string name="tardis_description">We can travel through time and space to see the weather.\n\nGet the weather for:</string>
+  <string name="tardis_location_dialog_title">Choose a Location</string>
+  <string name="tardis_tomorrow">Here, tomorrow morning</string>
+  <string name="tardis_next_week">Here, next week</string>
+  <string name="tardis_custom">Custom...</string>
+  <string name="tardis_custom_time_place">Custom Time &amp; Place...</string>
+  <string name="tardis_christmas">White Christmas?</string>
+  <string name="tardis_early_spring">Early Spring?</string>
+  <string name="tardis_rainy_april">Rainy April?</string>
+  <string name="tardis_windy_march">Windy March?</string>
+  <string name="tardis_back2school">Chilly back to school?</string>
+  <string name="tardis_halloween">Spooky Halloween?</string>
+
+  <string name="latitude" translatable="false">Latitude</string>
+  <string name="longitude" translatable="false">Longitude</string>
+  <string name="title_activity_maps" translatable="false">Map</string>
+  <string name="sample_url"><![CDATA[https://api.forecast.io/forecast/{DARKSKY_API_KEY}/{latitude},{longitude}?exclude=minutely,flags&lang={lang_code};]]></string>
+
 </resources>
