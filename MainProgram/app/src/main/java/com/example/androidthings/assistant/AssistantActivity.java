@@ -140,9 +140,11 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
 
             mLed.setDirection(Gpio.DIRECTION_OUT_INITIALLY_LOW);
             mLed.setActiveType(Gpio.ACTIVE_HIGH);
-        } catch (/*IOException*/ Exception e) {
+        } catch (IOException e) {
             Log.e(TAG, "error configuring peripherals:", e);
             return;
+        } catch (Exception e){
+            Log.e(TAG, "error with another exception:", e);
         }
 
         // Set volume from preferences
@@ -287,14 +289,14 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                             } catch (JSONException e) {
                                 Log.e(TAG, "Cannot get value of command", e);
                             }
-                            /*try {
+                            try {
                                 boolean turnOn = parameters.getBoolean("on");
                                 mLed.setValue(turnOn);
                             } catch (JSONException e) {
                                 Log.e(TAG, "Cannot get value of command", e);
                             } catch (IOException e) {
                                 Log.e(TAG, "Cannot set value of LED", e);
-                            }*/
+                            }
                         }
                     }
                 })
@@ -359,9 +361,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
     }
 
     //added as placeholder for when idle activity is integrated later 9/25/18
-    //TODO: put stuff here
     public void startIdle() {
         startActivity(new Intent(getApplicationContext(), IdleActivity.class));
-
     }
 }
