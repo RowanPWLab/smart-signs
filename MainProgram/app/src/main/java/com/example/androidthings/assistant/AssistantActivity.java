@@ -18,6 +18,7 @@ package com.example.androidthings.assistant;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.media.AudioDeviceInfo;
@@ -118,8 +119,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                 Log.e(TAG, "failed to found I2S audio output device, using default");
             }
         }
-//temporary comment to get it to run. 9/20/18 DS
-        /*
+
         try {
             if (USE_VOICEHAT_I2S_DAC) {
                 Log.i(TAG, "initializing DAC trigger");
@@ -144,7 +144,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
             Log.e(TAG, "error configuring peripherals:", e);
             return;
         }
-*/
+
         // Set volume from preferences
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         int initVolume = preferences.getInt(PREF_CURRENT_VOLUME, DEFAULT_VOLUME);
@@ -356,5 +356,10 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
             mDac = null;
         }
         mEmbeddedAssistant.destroy();
+    }
+
+    public void startIdle() {
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
     }
 }
