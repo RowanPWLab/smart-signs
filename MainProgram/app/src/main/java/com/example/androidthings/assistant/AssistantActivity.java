@@ -358,8 +358,9 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
         mEmbeddedAssistant.destroy();
     }
 
+    //added as placeholder for when idle activity is integrated later 9/25/18
     public void startIdle() {
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        startActivity(new Intent(getApplicationContext(), IdleActivity.class));
 
     }
 }
