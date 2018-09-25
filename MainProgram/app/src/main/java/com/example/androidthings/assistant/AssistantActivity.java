@@ -69,8 +69,10 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
 
     // Hardware peripherals.
     private Button mButton;
+    private Button idleButton;
     private android.widget.Button mButtonWidget;
     private android.widget.Button mButtonWidgetNav;
+    private android.widget.Button idleButtonWidget;
     private Gpio mLed;
     private Max98357A mDac;
 
@@ -105,6 +107,14 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
             }
         });
 
+        idleButtonWidget = findViewById(R.id.Idle_State_Btn);
+
+        idleButtonWidget.setOnClickListener(new View.OnClickListener() {   //start-stop button
+            @Override
+            public void onClick(View view) {
+                startIdle();
+            }
+        });
 
         // Audio routing configuration: use default routing.
         AudioDeviceInfo audioInputDevice = null;
@@ -362,6 +372,6 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
 
     //added as placeholder for when idle activity is integrated later 9/25/18
     public void startIdle() {
-        startActivity(new Intent(getApplicationContext(), IdleActivity.class));
+        startActivity(new Intent(getApplicationContext(), IdleActivity.class)); //start idle state activity
     }
 }
