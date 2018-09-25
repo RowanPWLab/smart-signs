@@ -3,6 +3,7 @@ package com.example.androidthings.assistant;
 import java.lang.Object;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -23,6 +24,7 @@ import org.json.JSONException;
 
 public class IdleActivity extends /*AppCompatActivity*/ Activity implements DownloadManager {
     private WeatherSync mWeatherSync;
+    private android.widget.Button request;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,17 @@ public class IdleActivity extends /*AppCompatActivity*/ Activity implements Down
         final String Glassboro = mWeatherSync.getUrl(39.712801299999995, -75.12203119999998);
 
         mWeatherSync.startForcedDownload(Glassboro);
+
+
+
+        request = findViewById(R.id.requestBtn);
+
+        request.setOnClickListener(new View.OnClickListener() {   //start-stop button
+            @Override
+            public void onClick(View view) {
+                makeRequest();
+            }
+        });
 
     }
 
@@ -102,6 +115,9 @@ public class IdleActivity extends /*AppCompatActivity*/ Activity implements Down
                 .show();
     }
 
+    public void makeRequest() {
+        startActivity(new Intent(getApplicationContext(), AssistantActivity.class)); //start idle state activity
+    }
 
 }
 
