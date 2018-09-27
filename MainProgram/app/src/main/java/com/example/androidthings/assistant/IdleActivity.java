@@ -59,7 +59,7 @@ public class IdleActivity extends /*AppCompatActivity*/ Activity implements Down
                 DataAnalysis dataAnalysis = new DataAnalysis(IdleActivity.this, mWeatherSync);
                 try {
                     dataAnalysis.generate();
-                    String message = "HIGH: " +  dataAnalysis.getTemperatureAnalysis().getTempHighMax() + "\u00B0F";
+                    String message = "HIGH: " +  Math.round(dataAnalysis.getTemperatureAnalysis().getTempHighMax()) + "\u00B0F";
                     ((TextView) findViewById(R.id.textView4)).setText(message);
                 }
                 catch (JSONException e) {
@@ -74,7 +74,7 @@ public class IdleActivity extends /*AppCompatActivity*/ Activity implements Down
                 DataAnalysis dataAnalysis = new DataAnalysis(IdleActivity.this, mWeatherSync);
                 try {
                     dataAnalysis.generate();
-                    String message2 = " LOW: " +  dataAnalysis.getTemperatureAnalysis().getTempLowMax() + "\u00B0F";
+                    String message2 = " LOW: " +  Math.round(dataAnalysis.getTemperatureAnalysis().getTempLowMax()) + "\u00B0F";
                     ((TextView) findViewById(R.id.textView3)).setText(message2);
                 }
                 catch (JSONException e) {
