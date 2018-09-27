@@ -13,12 +13,12 @@
 
     <Button
         android:id="@+id/assistantQueryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="2dp"
         android:text="@string/button_new_request"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,7 +29,7 @@
         android:layout_height="0dp"
         android:layout_below="@id/assistantQueryButton"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="110dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:baselineAligned="false"
@@ -50,11 +50,11 @@
 
     <Button
         android:id="@+id/Idle_State_Btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
         android:layout_alignTop="@+id/assistantQueryButton"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="8dp"
         android:layout_toEndOf="@+id/assistantQueryButton"
         android:text="Go To Weather"
