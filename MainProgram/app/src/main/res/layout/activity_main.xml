@@ -26,18 +26,23 @@
     <LinearLayout
         android:id="@+id/assistantRequestsLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_below="@id/assistantQueryButton"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:baselineAligned="false"
-        android:layout_marginTop="48dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ListView
             android:id="@+id/assistantRequestsListView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:transcriptMode="normal" />
 

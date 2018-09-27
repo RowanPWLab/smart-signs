@@ -99,7 +99,6 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
         mMainHandler = new Handler(getMainLooper());
         assistantRequestsListView.setAdapter(mAssistantRequestsAdapter);
         mButtonWidget = findViewById(R.id.assistantQueryButton);
-
         mButtonWidget.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
