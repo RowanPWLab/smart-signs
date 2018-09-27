@@ -40,10 +40,11 @@ public class IdleActivity extends /*AppCompatActivity*/ Activity implements Down
 
         request = findViewById(R.id.requestBtn);
 
+        //User can click button to get to google assistant activity. added 9/25/18
         request.setOnClickListener(new View.OnClickListener() {   //start-stop button
             @Override
             public void onClick(View view) {
-                makeRequest();
+                startActivity(new Intent(getApplicationContext(), AssistantActivity.class)); //start idle state activity
             }
         });
 
@@ -113,10 +114,6 @@ public class IdleActivity extends /*AppCompatActivity*/ Activity implements Down
         new AlertDialog.Builder(this)
                 .setTitle("Data not downloaded")
                 .show();
-    }
-
-    public void makeRequest() {
-        startActivity(new Intent(getApplicationContext(), AssistantActivity.class)); //start idle state activity
     }
 
 }
