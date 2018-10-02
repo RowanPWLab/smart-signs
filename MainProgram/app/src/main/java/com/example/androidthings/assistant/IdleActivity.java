@@ -89,7 +89,7 @@ public class IdleActivity extends /*AppCompatActivity*/ Activity implements Down
                 DataAnalysis dataAnalysis = new DataAnalysis(IdleActivity.this, mWeatherSync);
                 try {
                     dataAnalysis.generate();
-                    String message3 = "Wind Direction: " + dataAnalysis.getWindAnalysis().getDir() + " at " + dataAnalysis.getWindAnalysis().getWindHigh() + dataAnalysis.getWindAnalysis().getUnits();
+                    String message3 = "Wind Direction: " + dataAnalysis.getWindAnalysis().getDir() + " at " + Math.round(dataAnalysis.getWindAnalysis().getWindHigh()) + dataAnalysis.getWindAnalysis().getUnits();
                     ((TextView) findViewById(R.id.textView5)).setText(message3);
                 }
                 catch (JSONException e) {
