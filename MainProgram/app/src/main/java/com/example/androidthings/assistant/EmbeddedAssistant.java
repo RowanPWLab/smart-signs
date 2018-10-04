@@ -346,7 +346,7 @@ public class EmbeddedAssistant {
                 AssistConfig.Builder assistConfigBuilder = AssistConfig.newBuilder()
                     .setTextQuery(inputQuery)
                     .setAudioOutConfig(mAudioOutConfig)
-                    .setDeviceConfig(mDeviceConfig);
+                    .setDeviceConfig(mDeviceConfig);    //reads as PLACEHOLDER when debugging 10/2/2018
                 DialogStateIn.Builder dialogStateInBuilder = DialogStateIn.newBuilder();
                 if (mConversationState != null) {
                     dialogStateInBuilder.setConversationState(mConversationState);
@@ -649,7 +649,7 @@ public class EmbeddedAssistant {
                     .build();
             if (mEmbeddedAssistant.mAudioInputDevice != null) {
                 boolean result = mEmbeddedAssistant.mAudioRecord.setPreferredDevice(
-                        mEmbeddedAssistant.mAudioInputDevice);
+                        mEmbeddedAssistant.mAudioInputDevice);  //needs to be pointing to a usb audio source/
                 if (!result) {
                     Log.e(TAG, "failed to set preferred input device");
                 }
