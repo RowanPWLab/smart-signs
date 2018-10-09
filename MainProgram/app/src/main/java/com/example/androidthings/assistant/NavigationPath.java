@@ -273,7 +273,11 @@ public class NavigationPath extends View {
             case 206:
                 //"Woman's Bathroom";
             case 207:
+                Line = new float[]{SignStartx1,SignStarty1,604,628,604,628,744,628,744,628,744,426,744,426,700,426};
+                Endx1 = 700;
+                Endy1 = 426;
                 //"BME Research Lab";
+                break;
             case 208:
                 //"BME Research Lab";
             case 209:
