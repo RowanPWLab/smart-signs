@@ -18,6 +18,7 @@ package com.example.androidthings.assistant;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.media.AudioDeviceInfo;
@@ -68,8 +69,10 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
 
     // Hardware peripherals.
     private Button mButton;
+    private Button idleButton;
     private android.widget.Button mButtonWidget;
     private android.widget.Button mButtonWidgetNav;
+    private android.widget.Button idleButtonWidget;
     private Gpio mLed;
     private Max98357A mDac;
 
@@ -96,14 +99,22 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
         mMainHandler = new Handler(getMainLooper());
         assistantRequestsListView.setAdapter(mAssistantRequestsAdapter);
         mButtonWidget = findViewById(R.id.assistantQueryButton);
-
         mButtonWidget.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 mEmbeddedAssistant.startConversation();
+                //mEmbeddedAssistant.startConversation("How do I get to room 133?");    //line added 10/4/2018. I think it should let me use text for input instead of mic
             }
         });
 
+        idleButtonWidget = findViewById(R.id.Idle_State_Btn);
+
+        idleButtonWidget.setOnClickListener(new View.OnClickListener() {   //start-stop button
+            @Override
+            public void onClick(View view) {
+                startIdle();
+            }
+        });
 
         // Audio routing configuration: use default routing.
         AudioDeviceInfo audioInputDevice = null;
@@ -142,6 +153,8 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
         } catch (IOException e) {
             Log.e(TAG, "error configuring peripherals:", e);
             return;
+        } catch (Exception e){
+            Log.e(TAG, "error with another exception:", e);
         }
 
         // Set volume from preferences
@@ -286,14 +299,14 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                             } catch (JSONException e) {
                                 Log.e(TAG, "Cannot get value of command", e);
                             }
-                            /*try {
+                            try {
                                 boolean turnOn = parameters.getBoolean("on");
                                 mLed.setValue(turnOn);
                             } catch (JSONException e) {
                                 Log.e(TAG, "Cannot get value of command", e);
                             } catch (IOException e) {
                                 Log.e(TAG, "Cannot set value of LED", e);
-                            }*/
+                            }
                         }
                     }
                 })
@@ -355,5 +368,10 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
             mDac = null;
         }
         mEmbeddedAssistant.destroy();
+    }
+
+    //added as placeholder for when idle activity is integrated later 9/25/18
+    public void startIdle() {
+        startActivity(new Intent(getApplicationContext(), IdleActivity.class)); //start idle state activity
     }
 }

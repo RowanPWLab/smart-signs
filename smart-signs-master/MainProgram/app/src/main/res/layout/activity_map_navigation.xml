@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.androidthings.assistant.mapnavigation"
+    tools:layout_editor_absoluteY="81dp">
+
+
+    <Button
+        android:id="@+id/NavButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:text="Back" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        style="@android:style/Widget.Holo.Light.ScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="1100dp"
+                android:layout_height="1100dp">
+
+
+                <ImageView
+                    android:id="@+id/MapLayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:contentDescription="@string/mapplayer"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/floor3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.example.androidthings.assistant.NavigationPath
+                    android:id="@+id/NavLayer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="5dp"
+                    custom:PathColor="#ff000d"
+                    custom:EndColor="#33dc18"
+                    custom:RoomNumber="100" />
+            </FrameLayout>
+
+        </HorizontalScrollView>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
