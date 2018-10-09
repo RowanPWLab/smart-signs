@@ -102,8 +102,8 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
         mButtonWidget.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                //mEmbeddedAssistant.startConversation();
-                mEmbeddedAssistant.startConversation("How do I get to room 133?");    //line added 10/4/2018. I think it should let me use text for input instead of mic
+                mEmbeddedAssistant.startConversation();
+                //mEmbeddedAssistant.startConversation("How do I get to room 133?");    //line added 10/4/2018. I think it should let me use text for input instead of mic
             }
         });
 
