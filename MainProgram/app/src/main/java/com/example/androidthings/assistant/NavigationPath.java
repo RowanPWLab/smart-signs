@@ -485,13 +485,38 @@ public class NavigationPath extends View {
             case 306:
                 //"Woman's Bathroom";
             case 307:
+                Line = new float[]{SignStartx2,SignStarty2,608,430,608,430,608,307,608,307,587,307,587,307};
+                Endx1 = 587;
+                Endy1 = 307;
                 //"ECE Research Lab";
+                break;
             case 308:
+                Line = new float[]{SignStartx2,SignStarty2,608,430,608,430,608,217,608,217,582,217,582,217};
+                Endx1 = 582;
+                Endy1 = 217;
                 //"ECE Research Lab";
+                break;
             case 309:
+                Line = new float[]{SignStartx3,SignStarty3,608,430,608,430,608,128,608,128,583,128,583,128};
+                Endx1 = 583;
+                Endy1 = 128;
                 //"ECE Research Lab";
+                break;
+            case 310:
+                Line = new float[]{SignStartx3,SignStarty3,606,430,606,430,606,121,606,121,625,121,625,121};
+                Endx1 = 625;
+                Endy1 = 121;
+                break;
             case 312:
+
                 //"Pick-and-Place Room";
+                break;
+            case 313:
+                Line = new float[]{SignStartx3,SignStarty3,606,430,606,430,606,162,606,162,621,162,621,162};
+                Endx1 = 621;
+                Endy1 = 162;
+                break;
+            case 314:
             case 317:
                 //"Tech Office";
             case 319:
