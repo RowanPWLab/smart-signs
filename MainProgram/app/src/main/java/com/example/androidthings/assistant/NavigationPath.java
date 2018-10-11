@@ -358,64 +358,126 @@ public class NavigationPath extends View {
                 //"BME Teaching Lab";
                 break;
             case 223:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,585,617,585,617,595,603,595,603};
+                Endx1 = 595;
+                Endy1 = 603;
                 //"Collab room";
                 break;
             case 224:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,555,604,555,604,566,585,566,585};
+                Endx1 = 566;
+                Endy1 = 585;
                 //"Collab room";
                 //Faculty Offices: Make easy way to implement names and navigate here by name?
                 break;
             case 225:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,526,590,526,590,540,573,540,573};
+                Endx1 = 540;
+                Endy1 = 573;
                 //"Faculty Office";
                 break;
             case 226:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,503,574,503,574,513,555,513,555};
+                Endx1 = 513;
+                Endy1 = 555;
                 //"Faculty Office";
                 break;
             case 227:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,471,559,471,559,484,540,484,540};
+                Endx1 = 484;
+                Endy1 = 540;
                 //"Faculty Office";
                 break;
             case 228:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,446,542,446,542,456,524,456,524};
+                Endx1 = 456;
+                Endy1 = 524;
                 //"Faculty Office";
                 break;
             case 229:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,416,528,416,528,427,512,427,512};
+                Endx1 = 427;
+                Endy1 = 512;
                 //"Faculty Office";
                 break;
             case 230:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,387,512,387,512,395,497,395,497};
+                Endx1 = 395;
+                Endy1 = 497;
                 //"Faculty Office";
                 break;
             case 231:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,360,500,360,500,371,428,371,428};
+                Endx1 = 371;
+                Endy1 = 428;
                 //"Faculty Office";
                 break;
             case 232:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,333,482,333,482,343,467,343,467};
+                Endx1 = 343;
+                Endy1 = 467;
                 //"Faculty Office";
                 break;
             case 233:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,303,468,303,468,312,452,312,452};
+                Endx1 = 312;
+                Endy1 = 452;
                 //"Faculty Office";
                 break;
             case 234:
-                //"Faculty Office";
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,277,452,277,452,285,440,285,440};
+                Endx1 = 285;
+                Endy1 = 440;                //"Faculty Office";
                 break;
             case 235:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,249,436,249,436,259,422,259,422};
+                Endx1 = 259;
+                Endy1 = 422;
                 //"Faculty Office";
                 break;
             case 236:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,222,422,222,422,230,409,230,409};
+                Endx1 = 230;
+                Endy1 = 409;
                 //"Faculty Office";
                 break;
             case 237:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,193,408,193,408,202,392,202,392};
+                Endx1 = 202;
+                Endy1 = 392;
                 //"Faculty Office";
                 //End of Faculty Offices
                 break;
             case 238:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,220,423,220,423,210,440,210,440};
+                Endx1 = 210;
+                Endy1 = 440;
                 //"Clinics Conference Room";
                 break;
             case 240:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,290,462,290,462,271,492,271,492};
+                Endx1 = 271;
+                Endy1 = 492;
                 //"Project Lab";
                 break;
             case 241:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,374,511,374,511,357,537,357,537};
+                Endx1 = 357;
+                Endy1 = 537;
                 //"Project Lab";
                 break;
             case 243:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,611,629,611,629,476,568,476,568,462,590,462,590};
+                Endx1 = 462;
+                Endy1 = 590;
                 //"Project Lab";
                 break;
+            case 248:
+                Line = new float[]{SignStartx2,SignStarty2,716,629,716,629,642,629,642,629,642,721,642,721,612,721,612,721};
+                Endx1 = 612;
+                Endy1 = 721;
+                break;
+                //Offices?
 
                 //Floor 3
             case 305:
