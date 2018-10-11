@@ -26,8 +26,8 @@ public class NavigationPath extends View {
 
     private int SignStartx1 = 515;
     private int SignStarty1 = 574;
-    private int SignStartx2 = 661;
-    private int SignStarty2 = 628;
+    private int SignStartx2 = 716;
+    private int SignStarty2 = 656;
     private int SignStartx3 = 549;
     private int SignStarty3 = 430;
 
@@ -76,9 +76,17 @@ public class NavigationPath extends View {
         EndCirclePaint.setAntiAlias(true);
         EndCirclePaint.setColor(EndCol);
 
+        //draw circles at start and end points
         DrawCommand(RoomNumber);
         canvas.drawLines(Line, LinePaint);
-        canvas.drawCircle(SignStartx1,SignStarty1,5,CirclePaint);
+        if (RoomNumber < 200) { //1st floor
+            canvas.drawCircle(SignStartx1, SignStarty1, 5, CirclePaint);
+        } else if (RoomNumber < 300){   //2nd floor
+            canvas.drawCircle(SignStartx2, SignStarty2, 5, CirclePaint);
+        }else if (RoomNumber < 400){    //3rd floor
+            canvas.drawCircle(SignStartx3, SignStarty3, 5, CirclePaint);
+            //note: invalid room numbers are taken care of elsewhere, so no need to address it here
+        }
         canvas.drawCircle(Endx1,Endy1,5,EndCirclePaint);
     }
     public void SetRoomNumber(int x) {
@@ -273,12 +281,15 @@ public class NavigationPath extends View {
             case 206:
                 //"Woman's Bathroom";
             case 207:
-                Line = new float[]{SignStartx1,SignStarty1,604,628,604,628,744,628,744,628,744,426,744,426,700,426};
+                Line = new float[]{SignStartx2,SignStarty2,716,632,716,632,744,632,744,632,744,426,744,426,700,426};
                 Endx1 = 700;
                 Endy1 = 426;
                 //"BME Research Lab";
                 break;
             case 208:
+                Line = new float[]{SignStartx2,SignStarty2,716,630,716,630,745,630,745,630,745,329,745,329,712,329,712,329};
+                Endx1 = 712;
+                Endy1 = 329;
                 //"BME Research Lab";
             case 209:
                 //"Tissue Culture Suite";
