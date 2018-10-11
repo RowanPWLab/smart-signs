@@ -290,63 +290,132 @@ public class NavigationPath extends View {
                 Line = new float[]{SignStartx2,SignStarty2,716,630,716,630,745,630,745,630,745,329,745,329,712,329,712,329};
                 Endx1 = 712;
                 Endy1 = 329;
+                break;
                 //"BME Research Lab";
             case 209:
+                Line = new float[]{SignStartx2,SignStarty2,716,630,716,630,745,630,745,630,745,237,745,237,712,237,712,237};
+                Endx1 = 712;
+                Endy1 = 237;
+                break;
                 //"Tissue Culture Suite";
             case 210:
+                Line = new float[]{SignStartx2,SignStarty2,716,630,716,630,745,630,745,630,745,196,745,196,755,196,755,196};
+                Endx1 = 755;
+                Endy1 = 196;
                 //"Shared Instrument Lab";
-            case 215:
+                break;
+            case 211:
+                Line = new float[]{SignStartx2,SignStarty2,716,630,716,630,745,630,745,630,745,263,745,263,755,263,755,263};
+                Endx1 = 755;
+                Endy1 = 263;
+                break;
+            case 212:
+                Line = new float[]{SignStartx2,SignStarty2,716,630,716,630,745,630,745,630,745,238,745,238,814,238,814,238};
+                Endx1 = 814;
+                Endy1 = 238;
+                //"?";
+                break;
+            case 213:
+                Line = new float[]{SignStartx2,SignStarty2,716,630,716,630,745,630,745,630,745,174,745,174,755,174,755,174};
+                Endx1 = 755;
+                Endy1 = 174;
                 //"Imaging";
+                break;
+            case 215:
+                Line = new float[]{SignStartx2,SignStarty2,716,630,716,630,745,630,745,630,745,198,745,198,755,198,755,198};
+                Endx1 = 755;
+                Endy1 = 198;
+                //"Imaging";
+                break;
             case 217:
+                Line = new float[]{SignStartx2,SignStarty2,716,630,716,630,745,630,745,630,745,331,745,331,755,331,755,331};
+                Endx1 = 755;
+                Endy1 = 331;
                 //"Prep Room";
+                break;
             case 218:
+                Line = new float[]{SignStartx2,SignStarty2,716,630,716,630,745,630,745,630,745,295,745,295,755,295,755,295};
+                Endx1 = 755;
+                Endy1 = 295;
                 //"BME Tech";
+                break;
             case 219:
+                Line = new float[]{SignStartx2,SignStarty2,716,630,716,630,745,630,745,630,745,405,745,405,755,405,755,405};
+                Endx1 = 755;
+                Endy1 = 405;
                 //"BME Teaching Lab";
+                break;
             case 220:
+                Line = new float[]{SignStartx2,SignStarty2,716,630,716,630,745,630,745,630,745,486,745,486,755,486,755,486};
+                Endx1 = 755;
+                Endy1 = 486;
                 //"BME Teaching Lab";
+                break;
             case 221:
+                Line = new float[]{SignStartx2,SignStarty2,716,630,716,630,745,630,745,630,745,604,745,604,755,604,755,604};
+                Endx1 = 755;
+                Endy1 = 604;
                 //"BME Teaching Lab";
+                break;
             case 223:
                 //"Collab room";
+                break;
             case 224:
                 //"Collab room";
                 //Faculty Offices: Make easy way to implement names and navigate here by name?
+                break;
             case 225:
                 //"Faculty Office";
+                break;
             case 226:
                 //"Faculty Office";
+                break;
             case 227:
                 //"Faculty Office";
+                break;
             case 228:
                 //"Faculty Office";
+                break;
             case 229:
                 //"Faculty Office";
+                break;
             case 230:
                 //"Faculty Office";
+                break;
             case 231:
                 //"Faculty Office";
+                break;
             case 232:
                 //"Faculty Office";
+                break;
             case 233:
                 //"Faculty Office";
+                break;
             case 234:
                 //"Faculty Office";
+                break;
             case 235:
                 //"Faculty Office";
+                break;
             case 236:
                 //"Faculty Office";
+                break;
             case 237:
                 //"Faculty Office";
                 //End of Faculty Offices
+                break;
             case 238:
                 //"Clinics Conference Room";
+                break;
             case 240:
                 //"Project Lab";
+                break;
             case 241:
                 //"Project Lab";
+                break;
             case 243:
                 //"Project Lab";
+                break;
 
                 //Floor 3
             case 305:
