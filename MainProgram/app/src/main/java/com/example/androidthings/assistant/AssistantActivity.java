@@ -112,7 +112,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
         idleButtonWidget.setOnClickListener(new View.OnClickListener() {   //start-stop button
             @Override
             public void onClick(View view) {
-                startIdle();
+                startActivity(new Intent(getApplicationContext(), IdleActivity.class)); //start idle state activity
             }
         });
 
@@ -370,8 +370,4 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
         mEmbeddedAssistant.destroy();
     }
 
-    //added as placeholder for when idle activity is integrated later 9/25/18
-    public void startIdle() {
-        startActivity(new Intent(getApplicationContext(), IdleActivity.class)); //start idle state activity
-    }
 }
