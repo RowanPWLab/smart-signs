@@ -335,6 +335,7 @@ public class EmbeddedAssistant {
             }
         });
         mAssistantHandler.post(mStreamAssistantRequest);
+        //AssistantActivity.makingRequest = false;
     }
 
     public void startConversation(final String inputQuery) {
