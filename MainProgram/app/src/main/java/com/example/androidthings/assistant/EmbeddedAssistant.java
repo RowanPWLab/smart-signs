@@ -708,7 +708,10 @@ public class EmbeddedAssistant {
         /**
          * Called when the Assistant's response is complete.
          */
-        public void onResponseFinished() {}
+        public void onResponseFinished() {
+            //once the Assistant finishes responding, restart countdown to switch to idle state after TIME-OUT ms of inactivity
+            AssistantActivity.startIdleStateHandler.postDelayed(AssistantActivity.delayedRunnable, AssistantActivity.TIME_OUT);
+        }
 
         /**
          * Called when audio is being played. This may be called multiple times during a single

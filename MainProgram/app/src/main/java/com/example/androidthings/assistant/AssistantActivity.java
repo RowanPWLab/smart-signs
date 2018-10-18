@@ -104,6 +104,8 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                         mAssistantRequests);
         mMainHandler = new Handler(getMainLooper());
         assistantRequestsListView.setAdapter(mAssistantRequestsAdapter);
+
+        //if weather button is pressed, start Idle state activity
         mButtonWidget = findViewById(R.id.assistantQueryButton);
         mButtonWidget.setOnClickListener(new OnClickListener() {
             @Override
@@ -125,7 +127,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
         }, TIME_OUT);
 
         idleButtonWidget = findViewById(R.id.Idle_State_Btn);
-        idleButtonWidget.setOnClickListener(new View.OnClickListener() {   //start-stop button
+        idleButtonWidget.setOnClickListener(new View.OnClickListener() {   //button used to initiate request
             @Override
             public void onClick(View view) {
                 startIdleStateHandler.removeCallbacks(delayedRunnable);   //if switching to idle, stop the code that's waiting to start idle activity
