@@ -76,11 +76,11 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
     private Gpio mLed;
     private Max98357A mDac;
 
-    //For Timeout   added 10/16/2018
-    private static int TIME_OUT = 4000; //Time to launch the another activity
-    static boolean makingRequest = false;  //do not want it to timeout while person is making request
-    Handler startIdleDelayedHandler = new Handler();
-    Runnable delayedRunnable;
+    //For Timeout
+    // added 10/16/2018; updated 10/18/2018
+    static int TIME_OUT = 4000; //Time to launch the another activity
+    static Handler startIdleStateHandler = new Handler();    //handles the runnable that starts idle state after specified time
+    static Runnable delayedRunnable;   //code that runs when ready to start idle state after TIME_OUT ms
 
     private Handler mMainHandler;
 
@@ -108,32 +108,28 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
         mButtonWidget.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                makingRequest = true;
-                startIdleDelayedHandler.removeCallbacks(delayedRunnable);   //if making request, stop the code that's waiting to start the idle activity
+                startIdleStateHandler.removeCallbacks(delayedRunnable);   //if making request, stop the code that's waiting to start the idle activity
                 mEmbeddedAssistant.startConversation();
             }
         });
 
-        idleButtonWidget = findViewById(R.id.Idle_State_Btn);
-
         //Handler to automatically start Idle activity after TIME_OUT number of ms
-        //If activity is open for TIME_OUT ms, then IdleActivity opens
+        //If activity is open for TIME_OUT ms without user making request, then IdleActivity opens
         //added 10/16/2018
-        startIdleDelayedHandler.postDelayed(delayedRunnable = new Runnable() {
+        startIdleStateHandler.postDelayed(delayedRunnable = new Runnable() {
             @Override
             public void run() {
-                if (!makingRequest) {
                     startActivity(new Intent(getApplicationContext(), IdleActivity.class)); //start idle state activity
-                }
                 finish();
             }
         }, TIME_OUT);
 
+        idleButtonWidget = findViewById(R.id.Idle_State_Btn);
         idleButtonWidget.setOnClickListener(new View.OnClickListener() {   //start-stop button
             @Override
             public void onClick(View view) {
+                startIdleStateHandler.removeCallbacks(delayedRunnable);   //if switching to idle, stop the code that's waiting to start idle activity
                 startActivity(new Intent(getApplicationContext(), IdleActivity.class)); //start idle state activity
-                startIdleDelayedHandler.removeCallbacks(delayedRunnable);   //if switching to idle, stop the code that's waiting to start idle activity
             }
         });
 
@@ -310,7 +306,6 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                                         mButtonWidget.setOnClickListener(new OnClickListener() {
                                             @Override
                                             public void onClick(View view) {
-                                                //makingRequest = true;
                                                 mEmbeddedAssistant.startConversation();
                                             }
                                         });
@@ -357,7 +352,6 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
             Log.d(TAG, "error toggling LED:", e);
         }
         if (pressed) {
-            //makingRequest = true;
             mEmbeddedAssistant.startConversation();
         }
     }
