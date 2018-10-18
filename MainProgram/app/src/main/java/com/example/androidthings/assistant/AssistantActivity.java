@@ -120,7 +120,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                while(!makingRequest) {
+                if(!makingRequest) {
                     startActivity(new Intent(getApplicationContext(), IdleActivity.class)); //start idle state activity
                 }
                 finish();

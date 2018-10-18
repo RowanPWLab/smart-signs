@@ -402,6 +402,8 @@ public class EmbeddedAssistant {
             mAudioRecord.stop();
             mAudioRecord = null;
         }
+        AssistantActivity.makingRequest = false;
+
     }
 
     /**
