@@ -79,6 +79,8 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
     //For Timeout   added 10/16/2018
     private static int TIME_OUT = 4000; //Time to launch the another activity
     static boolean makingRequest = false;  //do not want it to timeout while person is making request
+    Handler startIdleDelayedHandler = new Handler();
+    Runnable delayedRunnable;
 
     private Handler mMainHandler;
 
@@ -107,8 +109,8 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
             @Override
             public void onClick(View view) {
                 makingRequest = true;
+                startIdleDelayedHandler.removeCallbacks(delayedRunnable);   //if making request, stop the code that's waiting to start the idle activity
                 mEmbeddedAssistant.startConversation();
-                //mEmbeddedAssistant.startConversation("How do I get to room 133?");    //line added 10/4/2018. I think it should let me use text for input instead of mic
             }
         });
 
@@ -117,10 +119,10 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
         //Handler to automatically start Idle activity after TIME_OUT number of ms
         //If activity is open for TIME_OUT ms, then IdleActivity opens
         //added 10/16/2018
-        new Handler().postDelayed(new Runnable() {
+        startIdleDelayedHandler.postDelayed(delayedRunnable = new Runnable() {
             @Override
             public void run() {
-                if(!makingRequest) {
+                if (!makingRequest) {
                     startActivity(new Intent(getApplicationContext(), IdleActivity.class)); //start idle state activity
                 }
                 finish();
@@ -131,6 +133,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), IdleActivity.class)); //start idle state activity
+                startIdleDelayedHandler.removeCallbacks(delayedRunnable);   //if switching to idle, stop the code that's waiting to start idle activity
             }
         });
 
