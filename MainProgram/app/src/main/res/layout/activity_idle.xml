@@ -21,20 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Good Afternoon!"
-        android:textAlignment="center"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
     <DigitalClock
         android:id="@+id/DigitalClock"
         android:layout_width="245dp"
@@ -56,10 +42,11 @@
         android:layout_width="191dp"
         android:layout_height="10dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView4"
@@ -69,7 +56,7 @@
         android:layout_marginEnd="8dp"
         android:maxLines="1"
         android:textAlignment="center"
-        android:textSize="36sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -82,7 +69,7 @@
         android:layout_marginEnd="8dp"
         android:maxLines="1"
         android:textAlignment="center"
-        android:textSize="36sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -133,7 +120,7 @@
         android:id="@+id/requestBtn"
         style="@android:style/Widget.Button"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="80dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
