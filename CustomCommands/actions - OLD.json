@@ -25,10 +25,7 @@
         "trigger": {
           "queryPatterns": [
             "Where is (room)? $SchemaOrg_Number:number",
-            "Where is (room)? $SchemaOrg_Number:number at",
-            "How do I get to (room)? $SchemaOrg_Number:number",
-            "How can I get to (room)? $SchemaOrg_Number:number",
-            "How would I get to (room)? $SchemaOrg_Number:number"
+            "How do I get to (room)? $SchemaOrg_Number:number"
           ]
         }
       },
