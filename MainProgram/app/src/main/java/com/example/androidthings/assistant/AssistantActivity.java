@@ -126,7 +126,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                 finish();
             }
         }, TIME_OUT);
-
+/*
         idleButtonWidget = findViewById(R.id.Idle_State_Btn);
         idleButtonWidget.setOnClickListener(new View.OnClickListener() {   //button used to initiate request
             @Override
@@ -134,7 +134,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                 startIdleStateHandler.removeCallbacks(delayedRunnable);   //if switching to idle, stop the code that's waiting to start idle activity
                 startActivity(new Intent(getApplicationContext(), IdleActivity.class)); //start idle state activity
             }
-        });
+        });*/
 
         // Audio routing configuration: use default routing.
         AudioDeviceInfo audioInputDevice = null;
