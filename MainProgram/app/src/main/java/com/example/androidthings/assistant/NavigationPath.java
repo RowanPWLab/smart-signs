@@ -63,6 +63,8 @@ public class NavigationPath extends View {
         }
     }
     protected void onDraw(Canvas canvas) {
+        //TODO: prevent map from drawing if requested room number does not exist
+
         LinePaint.setStyle(Paint.Style.FILL);
         LinePaint.setAntiAlias(true);
         LinePaint.setColor(LineCol);
@@ -485,6 +487,7 @@ public class NavigationPath extends View {
             case 306:
                 //"Woman's Bathroom";
             case 307:
+                //TODO: something is wrong with room 309: lines do not display correctly on map
                 Line = new float[]{SignStartx2,SignStarty2,608,430,608,430,608,307,608,307,587,307};
                 Endx1 = 587;
                 Endy1 = 307;
