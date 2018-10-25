@@ -487,14 +487,13 @@ public class NavigationPath extends View {
             case 306:
                 //"Woman's Bathroom";
             case 307:
-                //TODO: something is wrong with room 309: lines do not display correctly on map
-                Line = new float[]{SignStartx2,SignStarty2,608,430,608,430,608,307,608,307,587,307};
+                Line = new float[]{SignStartx3,SignStarty3,608,430,608,430,608,307,608,307,587,307};
                 Endx1 = 587;
                 Endy1 = 307;
                 //"ECE Research Lab";
                 break;
             case 308:
-                Line = new float[]{SignStartx2,SignStarty2,608,430,608,430,608,217,608,217,582,217};
+                Line = new float[]{SignStartx3,SignStarty3,608,430,608,430,608,217,608,217,582,217};
                 Endx1 = 582;
                 Endy1 = 217;
                 //"ECE Research Lab";
