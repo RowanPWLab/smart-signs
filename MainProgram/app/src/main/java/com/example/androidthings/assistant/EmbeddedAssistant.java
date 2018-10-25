@@ -439,7 +439,7 @@ public class EmbeddedAssistant {
      * Used to build an AssistantManager object.
      */
     public static class Builder {
-        private EmbeddedAssistant mEmbeddedAssistant;
+        static EmbeddedAssistant mEmbeddedAssistant;
         private int mSampleRate;
         private String mDeviceModelId;
         private String mDeviceInstanceId;

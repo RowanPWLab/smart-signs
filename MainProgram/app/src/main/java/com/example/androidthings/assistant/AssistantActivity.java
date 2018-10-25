@@ -112,7 +112,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
             @Override
             public void onClick(View view) {
                 startIdleStateHandler.removeCallbacks(delayedRunnable);   //if making request, stop the code that's waiting to start the idle activity
-                try {   //this occasionally caused crashes with null object reference, so adding try catch
+                try {   //this occasionally caused crashes with null object reference, so adding try-catch
                     mEmbeddedAssistant.startConversation();
                 }
                 catch(Exception e){
@@ -338,6 +338,10 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                 })
                 .build();
         mEmbeddedAssistant.connect();
+
+        //Once we finish setting everything up when switching from Idle to Assistant Activity, start a conversation
+        startIdleStateHandler.removeCallbacks(delayedRunnable);   //if making request, stop the code that's waiting to start the idle activity
+        mEmbeddedAssistant.startConversation();
     }
 
     private AudioDeviceInfo findAudioDevice(int deviceFlag, int deviceType) {
