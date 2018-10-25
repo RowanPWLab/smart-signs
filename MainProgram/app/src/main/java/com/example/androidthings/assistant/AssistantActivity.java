@@ -341,6 +341,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
 
         //Once we finish setting everything up when switching from Idle to Assistant Activity, start a conversation
         startIdleStateHandler.removeCallbacks(delayedRunnable);   //if making request, stop the code that's waiting to start the idle activity
+        // ^ This is not the msot efficient implementation: turning runnable on then off when starting activity, but it works and is good enough for now
         mEmbeddedAssistant.startConversation();
     }
 
