@@ -112,7 +112,12 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
             @Override
             public void onClick(View view) {
                 startIdleStateHandler.removeCallbacks(delayedRunnable);   //if making request, stop the code that's waiting to start the idle activity
-                mEmbeddedAssistant.startConversation();
+                try {   //this occasionally caused crashes with null object reference, so adding try catch
+                    mEmbeddedAssistant.startConversation();
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -309,6 +314,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                                         mButtonWidget.setOnClickListener(new OnClickListener() {
                                             @Override
                                             public void onClick(View view) {
+                                                startIdleStateHandler.removeCallbacks(delayedRunnable);   //if making request, stop the code that's waiting to start the idle activity
                                                 mEmbeddedAssistant.startConversation();
                                             }
                                         });

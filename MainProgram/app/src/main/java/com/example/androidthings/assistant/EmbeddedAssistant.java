@@ -265,21 +265,36 @@ public class EmbeddedAssistant {
         @Override
         public void run() {
             ByteBuffer audioData = ByteBuffer.allocateDirect(AUDIO_RECORD_BLOCK_SIZE);
-            int result = mAudioRecord.read(audioData, audioData.capacity(),
-                    AudioRecord.READ_BLOCKING);
-            if (result < 0) {
-                return;
-            }
-            mRequestHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    mRequestCallback.onAudioRecording();
+            /* was getting:
+            E/AndroidRuntime: FATAL EXCEPTION: assistantThread
+            Process: com.example.androidthings.assistant, PID: 2482
+            java.lang.NullPointerException: Attempt to invoke virtual method 'int android.media.AudioRecord.read(java.nio.ByteBuffer, int, int)' on a null object reference
+                at com.example.androidthings.assistant.EmbeddedAssistant$2.run(EmbeddedAssistant.java:268)
+                at android.os.Handler.handleCallback(Handler.java:790)
+                at android.os.Handler.dispatchMessage(Handler.java:99)
+                at android.os.Looper.loop(Looper.java:164)
+                at android.os.HandlerThread.run(HandlerThread.java:65)
+             */
+            try {   //added to stop crashing
+                int result = mAudioRecord.read(audioData, audioData.capacity(),
+                        AudioRecord.READ_BLOCKING);
+                if (result < 0) {
+                    return;
                 }
-            });
-            mAssistantRequestObserver.onNext(AssistRequest.newBuilder()
-                    .setAudioIn(ByteString.copyFrom(audioData))
-                    .build());
-            mAssistantHandler.post(mStreamAssistantRequest);
+                mRequestHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        mRequestCallback.onAudioRecording();
+                    }
+                });
+                mAssistantRequestObserver.onNext(AssistRequest.newBuilder()
+                        .setAudioIn(ByteString.copyFrom(audioData))
+                        .build());
+                mAssistantHandler.post(mStreamAssistantRequest);
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            };
         }
     };
 
