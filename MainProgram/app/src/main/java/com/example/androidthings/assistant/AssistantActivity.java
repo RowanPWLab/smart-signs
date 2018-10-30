@@ -79,7 +79,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
     //For Timeout
     // added 10/16/2018; updated 10/18/2018
     //variables need to be static so we can access them in EmbeddedAssistant activity to restart the countdown
-    static int TIME_OUT = 4000; //Time to launch the another activity
+    static int TIME_OUT = 40000; //Time to launch the another activity
     static Handler startIdleStateHandler = new Handler();    //handles the runnable that starts idle state after specified time
     static Runnable delayedRunnable;   //code that runs when ready to start idle state after TIME_OUT ms
 

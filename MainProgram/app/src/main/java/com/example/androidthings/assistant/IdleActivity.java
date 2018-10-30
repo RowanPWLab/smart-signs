@@ -30,12 +30,15 @@ public class IdleActivity extends /*AppCompatActivity*/ Activity implements Down
     private WeatherSync mWeatherSync;
     private android.widget.Button request;
 
+    boolean connected = false;  //true if connected to internet, else false. Initialized to true
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_idle);
 
-        boolean connected = false;
+        //check to see if we have internet (needed for getting weather)
         ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
         if(connectivityManager.getActiveNetworkInfo() != null) {
             //we are connected to a network
@@ -44,8 +47,11 @@ public class IdleActivity extends /*AppCompatActivity*/ Activity implements Down
         else
             connected = false;
 
+        //If program is restarting after losing power or crashing, the internet needs a few seconds to reconnect
+        //Adding a delay using a for loop
+        // (Not the best design, but the wait function did not work)
         if(!connected) {
-            for(int i = 0; i < 2147483647; i++);
+            for(int i = 0; i < 1000000000; i++);
         }
 
         mWeatherSync = new WeatherSync(IdleActivity.this, this);
