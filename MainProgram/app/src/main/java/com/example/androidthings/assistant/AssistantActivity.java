@@ -79,7 +79,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
     //For Timeout
     // added 10/16/2018; updated 10/18/2018
     //variables need to be static so we can access them in EmbeddedAssistant activity to restart the countdown
-    static int TIME_OUT = 40000; //Time to launch the another activity
+    static int TIME_OUT = 4000; //Time to launch the another activity
     static Handler startIdleStateHandler = new Handler();    //handles the runnable that starts idle state after specified time
     static Runnable delayedRunnable;   //code that runs when ready to start idle state after TIME_OUT ms
 
@@ -106,7 +106,6 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
         mMainHandler = new Handler(getMainLooper());
         assistantRequestsListView.setAdapter(mAssistantRequestsAdapter);
 
-        //if weather button is pressed, start Idle state activity
         mButtonWidget = findViewById(R.id.assistantQueryButton);
         mButtonWidget.setOnClickListener(new OnClickListener() {
             @Override
@@ -341,7 +340,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
 
         //Once we finish setting everything up when switching from Idle to Assistant Activity, start a conversation
         startIdleStateHandler.removeCallbacks(delayedRunnable);   //if making request, stop the code that's waiting to start the idle activity
-        // ^ This is not the msot efficient implementation: turning runnable on then off when starting activity, but it works and is good enough for now
+        // ^ This is not the most efficient implementation: turning runnable on then off when starting activity, but it works and is good enough for now
         mEmbeddedAssistant.startConversation();
     }
 

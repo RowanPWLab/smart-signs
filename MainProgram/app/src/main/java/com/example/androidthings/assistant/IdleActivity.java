@@ -3,8 +3,12 @@ package com.example.androidthings.assistant;
 import java.lang.Object;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.ContactsContract;
@@ -30,6 +34,19 @@ public class IdleActivity extends /*AppCompatActivity*/ Activity implements Down
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_idle);
+
+        boolean connected = false;
+        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        if(connectivityManager.getActiveNetworkInfo() != null) {
+            //we are connected to a network
+            connected = true;
+        }
+        else
+            connected = false;
+
+        if(!connected) {
+            for(int i = 0; i < 2147483647; i++);
+        }
 
         mWeatherSync = new WeatherSync(IdleActivity.this, this);
         final String Glassboro = mWeatherSync.getUrl(39.712801299999995, -75.12203119999998);
