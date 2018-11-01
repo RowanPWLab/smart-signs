@@ -38,21 +38,23 @@ public class IdleActivity extends /*AppCompatActivity*/ Activity implements Down
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_idle);
 
-        //check to see if we have internet (needed for getting weather)
-        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-        if(connectivityManager.getActiveNetworkInfo() != null) {
-            //we are connected to a network
-            connected = true;
+        /*
+          If program is restarting after losing power or crashing, we need to wait for internet before
+          trying to redownload the weather data. Else, error messages would show. Using while loop to
+          wait until internet reconnects.
+         */
+        Toast.makeText(this, "RECONNECTING TO INTERNET", Toast.LENGTH_LONG).show(); //display explanatory toast
+        while(!connected) {
+            //check to see if we have internet (needed for getting weather)
+            ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+            if (connectivityManager.getActiveNetworkInfo() != null) {
+                //we are connected to a network
+                connected = true;
+            } else
+                connected = false;
         }
-        else
-            connected = false;
 
-        //If program is restarting after losing power or crashing, the internet needs a few seconds to reconnect
-        //Adding a delay using a for loop
-        // (Not the best design, but the wait function did not work)
-        if(!connected) {
-            for(int i = 0; i < 1000000000; i++);
-        }
+
 
         mWeatherSync = new WeatherSync(IdleActivity.this, this);
         final String Glassboro = mWeatherSync.getUrl(39.712801299999995, -75.12203119999998);
