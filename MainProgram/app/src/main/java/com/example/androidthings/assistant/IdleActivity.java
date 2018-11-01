@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -31,7 +32,7 @@ public class IdleActivity extends /*AppCompatActivity*/ Activity implements Down
     private android.widget.Button request;
 
     boolean connected = false;  //true if connected to internet, else false. Initialized to true
-
+    boolean alreadySetTV = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,15 +44,23 @@ public class IdleActivity extends /*AppCompatActivity*/ Activity implements Down
           trying to redownload the weather data. Else, error messages would show. Using while loop to
           wait until internet reconnects.
          */
-        Toast.makeText(this, "RECONNECTING TO INTERNET", Toast.LENGTH_LONG).show(); //display explanatory toast
         while(!connected) {
             //check to see if we have internet (needed for getting weather)
             ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
             if (connectivityManager.getActiveNetworkInfo() != null) {
                 //we are connected to a network
                 connected = true;
-            } else
+                //reset textview color (is changed to red if no internet initially
+                ((TextView) findViewById(R.id.textView3)).setTextColor(Color.BLACK);
+            } else {
                 connected = false;
+                if(!alreadySetTV) {   //only show the toast once
+                    //Toast.makeText(this, "RECONNECTING TO INTERNET", Toast.LENGTH_LONG).show(); //display explanatory toast
+                    ((TextView) findViewById(R.id.textView3)).setTextColor(Color.RED);  //set text color to red
+                    ((TextView) findViewById(R.id.textView3)).setText("WAITING FOR INTERNET");
+                    alreadySetTV = true;  //ensure that toast is not shown every time this loop runs - just 1st time
+                }
+            }
         }
 
 
