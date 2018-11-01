@@ -32,7 +32,7 @@ public class IdleActivity extends /*AppCompatActivity*/ Activity implements Down
     private android.widget.Button request;
 
     boolean connected = false;  //true if connected to internet, else false. Initialized to true
-    boolean alreadySetTV = false;
+    boolean alreadySetTV = false;   //prevents code from constantly changing textview3 when unnecessary
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,13 +50,9 @@ public class IdleActivity extends /*AppCompatActivity*/ Activity implements Down
             if (connectivityManager.getActiveNetworkInfo() != null) {
                 //we are connected to a network
                 connected = true;
-                //reset textview color (is changed to red if no internet initially
-                ((TextView) findViewById(R.id.textView3)).setTextColor(Color.BLACK);
             } else {
                 connected = false;
-                if(!alreadySetTV) {   //only show the toast once
-                    //Toast.makeText(this, "RECONNECTING TO INTERNET", Toast.LENGTH_LONG).show(); //display explanatory toast
-                    ((TextView) findViewById(R.id.textView3)).setTextColor(Color.RED);  //set text color to red
+                if(!alreadySetTV) {   //only update the textview if not already done yet
                     ((TextView) findViewById(R.id.textView3)).setText("WAITING FOR INTERNET");
                     alreadySetTV = true;  //ensure that toast is not shown every time this loop runs - just 1st time
                 }
