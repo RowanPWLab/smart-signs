@@ -36,10 +36,6 @@
             "Show me how to get to (room)? $SchemaOrg_Number:number",
             "How do I get to (room)? $SchemaOrg_Number:number",
             "How can I get to (room)? $SchemaOrg_Number:number",
-            "Take me to (room)? $SchemaOrg_Number:number",
-            "(room)? $SchemaOrg_Number:number",
-            "Give me direcitons to (room)? $SchemaOrg_Number:number",
-            "Show me how to get to (room)? $SchemaOrg_Number:number",
             "How would I get to (room)? $SchemaOrg_Number:number"
           ]
         }
