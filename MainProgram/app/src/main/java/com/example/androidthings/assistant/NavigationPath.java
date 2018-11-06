@@ -82,12 +82,11 @@ public class NavigationPath extends View {
         DrawCommand(RoomNumber);
         canvas.drawLines(Line, LinePaint);
         if (RoomNumber < 200) { //1st floor
-            canvas.drawCircle(SignStartx1, SignStarty1, 5, CirclePaint);
+            if(RoomNumber > 99) canvas.drawCircle(SignStartx1, SignStarty1, 5, CirclePaint);    //ensure room number is also > 99 before drawing circle
         } else if (RoomNumber < 300){   //2nd floor
             canvas.drawCircle(SignStartx2, SignStarty2, 5, CirclePaint);
         }else if (RoomNumber < 400){    //3rd floor
             canvas.drawCircle(SignStartx3, SignStarty3, 5, CirclePaint);
-            //note: invalid room numbers are taken care of elsewhere, so no need to address it here
         }
         canvas.drawCircle(Endx1,Endy1,5,EndCirclePaint);
     }

@@ -1,6 +1,7 @@
 package com.example.androidthings.assistant;
 
 import android.app.Activity;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.widget.ImageView;
 
@@ -13,6 +14,7 @@ public class mapnavigation {
     private static ImageView mImageView;
     private static NavigationPath Path;
     private static int number;
+    private TextToSpeech textToSpeech;
     //private android.widget.Button mButtonWidget;
 
     public static void navigate(Activity activity, int roomnumber){

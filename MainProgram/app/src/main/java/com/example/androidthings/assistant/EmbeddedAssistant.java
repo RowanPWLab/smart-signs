@@ -352,6 +352,7 @@ public class EmbeddedAssistant {
         mAssistantHandler.post(mStreamAssistantRequest);
     }
 
+    //used for inputting a query as text
     public void startConversation(final String inputQuery) {
         mRequestCallback.onRequestStart();
         mAssistantHandler.post(new Runnable() {
