@@ -54,3 +54,6 @@ google-services.json
 freeline.py
 freeline/
 freeline_project_description.json
+
+# A backup file of old custom actions file
+actions - OLD*
