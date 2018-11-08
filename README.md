@@ -12,7 +12,6 @@ Upon user request this program can display the location of a voice requested roo
 This program currently is set up to pull data from the IEEE calender, however needs to be adjusted to then take the data and display it on to a layout.
 
 # What needs to be done?
-- Finished navigation paths must be added to the navigation system switch statements.
 - Event Listing needs to be fixed
 - Navigation system method switched over to a pathing algorithm to make the system more adaptable to new buildings.
 - Expand the system to include campus wide maps
