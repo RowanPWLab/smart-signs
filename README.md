@@ -3,7 +3,7 @@ Interactive digital signage using Android Things and Google Assistant SDK
 
 # Program States
 ## Idle State
-Displays the time, weather, date, etc for a user to quickly view as they pass by.
+Displays the time, weather, date, and location for a user to quickly view as they pass by.
 ## Navigation
 Upon user request this program can display the location of a voice requested room within the Rowan Extension Hall.
 
