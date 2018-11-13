@@ -332,6 +332,13 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                             } catch (IOException e) {
                                 Log.e(TAG, "Cannot set value of LED", e);
                             }
+                        } else if (intentName.equals("com.acme.commands.Room_Name")) {
+                            try {
+                                String room = parameters.getString("name");
+                                Log.d(TAG, "Looking for Room_Name: Room: " + room);
+                            } catch (JSONException e) {
+                                Log.e(TAG, "Cannot get value of command", e);
+                            }
                         }
                     }
                 })
