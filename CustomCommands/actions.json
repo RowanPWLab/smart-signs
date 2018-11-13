@@ -36,7 +36,7 @@
               {
                 "deviceExecution": {
                   "command": "com.acme.commands.Room_Number",
-                  "params": {       
+                  "params": {
                     "number": "$number"
                   }
                 }
@@ -45,6 +45,75 @@
           }
         }
       }
+    },
+    {
+      "name": "com.acme.actions.Room_Name",
+      "availability": {
+        "deviceClasses": [
+          {
+            "assistantSdkDevice": {}
+          }
+        ]
+      },
+      "intent": {
+        "name": "com.acme.intents.Room_Name",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "RoomName"
+          }
+        ],
+        "trigger": {
+          "queryPatterns": [
+            "Where is (room)? $RoomName:name",
+            "How do I get to (room)? $RoomName:name"
+          ]
+        }
+      },
+      "fulfillment": {
+        "staticFulfillment": {
+          "templatedResponse": {
+            "items": [
+              {
+                "deviceExecution": {
+                  "command": "com.acme.commands.Room_Name",
+                  "params": {
+                    "name": "$name"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "$RoomName",
+      "entities": [
+        {
+          "key": "346",
+          "synonyms": [
+            "office",
+            "E C E office"
+          ]
+        },
+        {
+          "key": "306",
+          "synonyms": [
+            "bathroom",
+            "womans bathroom"
+          ]
+        },
+        {
+          "key": "100",
+          "synonyms": [
+            "atrium",
+            "commons area"
+          ]
+        }
+      ]
     }
   ]
 }
