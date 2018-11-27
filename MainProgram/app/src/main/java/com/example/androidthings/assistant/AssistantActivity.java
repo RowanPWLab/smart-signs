@@ -76,13 +76,14 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
     private Gpio mLed;
     private Max98357A mDac;
 
-    //For Timeout
+    // For Timeout
     // added 10/16/2018; updated 10/18/2018
     //variables need to be static so we can access them in EmbeddedAssistant activity to restart the countdown
-    static int TIME_OUT = 40000; //Time to launch the another activity
+    static int TIME_OUT = 40000; //Time to launch the another activity in ms
     static Handler startIdleStateHandler = new Handler();    //handles the runnable that starts idle state after specified time
     static Runnable delayedRunnable;   //code that runs when ready to start idle state after TIME_OUT ms
 
+    // Other
     private Handler mMainHandler;
 
     // List & adapter to store and display the history of Assistant Requests.
@@ -130,15 +131,6 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                 finish();
             }
         }, TIME_OUT);
-/*
-        idleButtonWidget = findViewById(R.id.Idle_State_Btn);
-        idleButtonWidget.setOnClickListener(new View.OnClickListener() {   //button used to initiate request
-            @Override
-            public void onClick(View view) {
-                startIdleStateHandler.removeCallbacks(delayedRunnable);   //if switching to idle, stop the code that's waiting to start idle activity
-                startActivity(new Intent(getApplicationContext(), IdleActivity.class)); //start idle state activity
-            }
-        });*/
 
         // Audio routing configuration: use default routing.
         AudioDeviceInfo audioInputDevice = null;
@@ -299,7 +291,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                                 + "rs");
                         }
                         if (intentName.equals("com.acme.commands.Room_Number")) {
-                            try {
+                            try {   //get room number
                                 int room = (int)parameters.getDouble("number");
                                 nav.navigate(AssistantActivity.this, room);
                                 Log.i(TAG,"Entered Room_Number: Room: " + room);
