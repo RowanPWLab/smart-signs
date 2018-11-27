@@ -20,27 +20,31 @@
           {
             "name": "number",
             "type": "SchemaOrg_Number"
+          },
+          {
+            "name": "name",
+            "type": "RoomName"
           }
         ],
         "trigger": {
           "queryPatterns": [
-            "Where's (classroom)? (room)? $SchemaOrg_Number:number",
-            "Where is (classroom)? (room)? $SchemaOrg_Number:number",
-            "Where's (classroom)? (room)? $SchemaOrg_Number:number at",
-            "Where is (classroom)? (room)? $SchemaOrg_Number:number at",
-            "How can I find (classroom)? (room)? $SchemaOrg_Number:number",
-            "Where can I find (classroom)? (room)? $SchemaOrg_Number:number",
-            "Where can I find (classroom)? (room)? $SchemaOrg_Number:number at",
-            "Where would I find (classroom)? (room)? $SchemaOrg_Number:number",
-            "Where would I find (classroom)? (room)? $SchemaOrg_Number:number at",
-            "Show me how to get to (classroom)? (room)? $SchemaOrg_Number:number",
-            "How do (you)? (I)? get to (classroom)? (room)? $SchemaOrg_Number:number",
-            "How can (you)? (I)? get to (classroom)? (room)? $SchemaOrg_Number:number",
-            "Take me to (classroom)? (room)? $SchemaOrg_Number:number",
-            "(classroom)? (room)? $SchemaOrg_Number:number",
-            "Give me directions to (classroom)? (room)? $SchemaOrg_Number:number",
-            "Show me how to get to (classroom)? (room)? $SchemaOrg_Number:number",
-            "How would (you)? (I)? get to (classroom)? (room)? $SchemaOrg_Number:number"
+            "Where's (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)?",
+            "Where is (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)?",
+            "Where's (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)? at",
+            "Where is (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)? at",
+            "How can I find (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)?",
+            "Where can I find (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)?",
+            "Where can I find (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)? at",
+            "Where would I find (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)?",
+            "Where would I find (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)? at",
+            "Show me how to get to (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)?",
+            "How do (you)? (I)? get to (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)?",
+            "How can (you)? (I)? get to (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)?",
+            "Take me to (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)?",
+            "(the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)?",
+            "Give me directions to (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)?",
+            "Show me how to get to (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)?",
+            "How would (you)? (I)? get to (the)? (classroom)? (room)? ($SchemaOrg_Number:number)? (RoomName:name)?"
           ]
         }
       },
@@ -49,10 +53,16 @@
           "templatedResponse": {
             "items": [
               {
+                "simpleResponse": {
+                  "textToSpeech": "Here's a map"
+                }
+              },
+              {
                 "deviceExecution": {
                   "command": "com.acme.commands.Room_Number",
                   "params": {
-                    "number": "$number"
+                    "number": "$number",
+                    "name": "$RoomName"
                   }
                 }
               }

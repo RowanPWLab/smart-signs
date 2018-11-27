@@ -482,8 +482,16 @@ public class NavigationPath extends View {
 
                 //Floor 3
             case 305:
+                Line = new float[]{SignStartx3,SignStarty3,608,430,608,430,608,380,608,380,589,380};
+                Endx1 = 589;
+                Endy1 = 380;
+                break;
                 //"Men's Bathroom";
             case 306:
+                Line = new float[]{SignStartx3,SignStarty3,608,430,608,430,608,358,608,358,589,358};
+                Endx1 = 589;
+                Endy1 = 358;
+                break;
                 //"Woman's Bathroom";
             case 307:
                 Line = new float[]{SignStartx3,SignStarty3,608,430,608,430,608,307,608,307,587,307};
