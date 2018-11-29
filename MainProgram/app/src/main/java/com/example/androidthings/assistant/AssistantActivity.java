@@ -290,6 +290,7 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                             Log.d(TAG, "Get device action " + intentName + " with no paramete"
                                 + "rs");
                         }
+                        //if user asks for a room using a number:
                         if (intentName.equals("com.acme.commands.Room_Number")) {
                             try {   //get room number
                                 int room = (int)parameters.getDouble("number");
@@ -324,10 +325,34 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                             } catch (IOException e) {
                                 Log.e(TAG, "Cannot set value of LED", e);
                             }
+                        //if user asks for a room by a non-numerical name, e.g. "office":
+                        //added 11/29/2018
                         } else if (intentName.equals("com.acme.commands.Room_Name")) {
                             try {
-                                String room = parameters.getString("name");
+                                String room = parameters.getString("name"); //get value of input
+                                //actions.json converts room name into number equivalent,
+                                // so String room is actually a number when it gets here in the code
+                                int room_int = Integer.parseInt(room);  //turn string into int
+                                nav.navigate(AssistantActivity.this, room_int); //start navigation
                                 Log.d(TAG, "Looking for Room_Name: Room: " + room);
+                                nav.startnavigation();
+                                mButtonWidgetNav = findViewById(R.id.NavButton);
+                                mButtonWidgetNav.setOnClickListener(new OnClickListener()  {
+                                    @Override
+                                    public void onClick(View view) {
+                                        setContentView(R.layout.activity_main);
+                                        mButtonWidget = findViewById(R.id.assistantQueryButton);
+                                        mButtonWidget.setOnClickListener(new OnClickListener() {
+                                            @Override
+                                            public void onClick(View view) {
+                                                startIdleStateHandler.removeCallbacks(delayedRunnable);   //if making request, stop the code that's waiting to start the idle activity
+                                                mEmbeddedAssistant.startConversation();
+                                            }
+                                        });
+                                        view.invalidate();
+                                        view.requestLayout();
+                                    }
+                                });
                             } catch (JSONException e) {
                                 Log.e(TAG, "Cannot get value of command", e);
                             }
