@@ -135,13 +135,13 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                 ((TextView) findViewById(R.id.suggestionsTV)).setText("You can ask me things like \"What's the weather like?\"");
                 break;
             case 2:
-                ((TextView) findViewById(R.id.suggestionsTV)).setText("You can ask me things like \"Give me directions to the office.\"");
+                ((TextView) findViewById(R.id.suggestionsTV)).setText("You say things like \"Give me directions to the office.\"");
                 break;
             case 3:
                 ((TextView) findViewById(R.id.suggestionsTV)).setText("You can ask me things like \"Where's the ECE office?\"");
                 break;
-            default:
-                ((TextView) findViewById(R.id.suggestionsTV)).setText("You can ask me things like \"What's the weather like?\"");
+            default:    //the default should never fire, but it's here just in case
+                ((TextView) findViewById(R.id.suggestionsTV)).setText("You can ask me things like \"Where's the ECE office?\"");
                 break;
         }
 
