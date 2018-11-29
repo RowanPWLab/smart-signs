@@ -32,6 +32,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+
 import com.example.androidthings.assistant.EmbeddedAssistant.ConversationCallback;
 import com.example.androidthings.assistant.EmbeddedAssistant.RequestCallback;
 import com.google.android.things.contrib.driver.button.Button;
@@ -47,6 +49,8 @@ import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
+import java.util.concurrent.ThreadLocalRandom;
+
 
 
 public class AssistantActivity extends Activity implements Button.OnButtonEventListener {
@@ -98,7 +102,6 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
         super.onCreate(savedInstanceState);
         Log.i(TAG, "starting assistant demo");
 
-
         setContentView(R.layout.activity_main);
         ListView assistantRequestsListView = findViewById(R.id.assistantRequestsListView);
         mAssistantRequestsAdapter =
@@ -120,6 +123,27 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
                 }
             }
         });
+
+        //display query suggestion on screen. Randomize between 4 options using random number generator
+        //added 11/29/2018
+        int randomNum = ThreadLocalRandom.current().nextInt(0, 3 + 1);
+        switch(randomNum){
+            case 0:
+                ((TextView) findViewById(R.id.suggestionsTV)).setText("You can ask me things like \"Where is room 340?\"");
+                break;
+            case 1:
+                ((TextView) findViewById(R.id.suggestionsTV)).setText("You can ask me things like \"What's the weather like?\"");
+                break;
+            case 2:
+                ((TextView) findViewById(R.id.suggestionsTV)).setText("You can ask me things like \"Give me directions to the office.\"");
+                break;
+            case 3:
+                ((TextView) findViewById(R.id.suggestionsTV)).setText("You can ask me things like \"Where's the ECE office?\"");
+                break;
+            default:
+                ((TextView) findViewById(R.id.suggestionsTV)).setText("You can ask me things like \"What's the weather like?\"");
+                break;
+        }
 
         //Handler to automatically start Idle activity after TIME_OUT number of ms
         //If activity is open for TIME_OUT ms without user making request, then IdleActivity opens
