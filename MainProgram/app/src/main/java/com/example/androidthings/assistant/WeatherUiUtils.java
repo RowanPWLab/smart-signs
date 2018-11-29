@@ -13,8 +13,6 @@ import java.util.GregorianCalendar;
  * Created by N on 5/27/2015.
  */
 
-//TODO: Does textView6 in activity_idle.xml actually do anything? Maybe remove it later? 9/27/18
-
 public class WeatherUiUtils {
     private static final String TAG = "weatherdelta::UiUtils";
 
