@@ -123,21 +123,38 @@
           "key": "346",
           "synonyms": [
             "office",
-            "E C E office"
+            "E C E office",
+            "ECE office"
           ]
         },
         {
           "key": "306",
           "synonyms": [
             "bathroom",
-            "womans bathroom"
+            "womans bathroom",
+            "girls bathroom",
+            "girls room",
+            "womans room"
+          ]
+        },
+        {
+          "key": "305",
+          "synonyms": [
+            "mens bathroom",
+            "boys bathroom",
+            "boys room",
+            "mens room"
           ]
         },
         {
           "key": "100",
           "synonyms": [
             "atrium",
-            "commons area"
+            "commons area",
+            "Einsteins",
+            "Einsteins bagels",
+            "Einstein brothers bagels",
+            "food court"
           ]
         }
       ]
